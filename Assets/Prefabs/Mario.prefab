@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3235220231813472813}
   - component: {fileID: 3884270047895906785}
   - component: {fileID: 3630668577191079372}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 4171360062667764472}
   - component: {fileID: 6233037807261764033}
   - component: {fileID: 8686446063204314708}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mario
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 5207404522053510056}
   - component: {fileID: 8359663146278317826}
   - component: {fileID: 3975672399378538284}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}

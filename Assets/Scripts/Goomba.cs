@@ -12,10 +12,12 @@ public class Goomba : MonoBehaviour
             if (player.starpower)
             {
                 Hit();
+                GameManager.Instance.AddEScore();
             }
             else if (collision.transform.DotTest(transform, Vector2.down))
             {
                 Flatten();
+                GameManager.Instance.AddEScore();
             }
             else
             {
@@ -29,6 +31,7 @@ public class Goomba : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Shell"))
         {
             Hit();
+            GameManager.Instance.AddEScore();
         }
     }
     private void Flatten()
@@ -44,6 +47,7 @@ public class Goomba : MonoBehaviour
     {
         GetComponent<AnimatedSprite>().enabled = false;
         GetComponent<DeathAnimation>().enabled = true;
+        transform.eulerAngles = new Vector3(180.0f, 0.0f, 0.0f);
         Destroy(gameObject, 3f);
     }
 }

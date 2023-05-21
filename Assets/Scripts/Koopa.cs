@@ -18,6 +18,7 @@ public class Koopa : MonoBehaviour
             if (player.starpower)
             {
                 Hit();
+                GameManager.Instance.AddEScore();
             }
             else if (collision.transform.DotTest(transform, Vector2.down))
             {
@@ -45,6 +46,7 @@ public class Koopa : MonoBehaviour
                 if (player.starpower)
                 {
                     Hit();
+                    GameManager.Instance.AddEScore();
                 }
                 else
                 {
@@ -55,6 +57,7 @@ public class Koopa : MonoBehaviour
         else if (!shelled && other.gameObject.layer == LayerMask.NameToLayer("Shell"))
         {
             Hit();
+            GameManager.Instance.AddEScore();
         }
     }
 
@@ -87,14 +90,7 @@ public class Koopa : MonoBehaviour
     {
         GetComponent<AnimatedSprite>().enabled = false;
         GetComponent<DeathAnimation>().enabled = true;
+        transform.eulerAngles = new Vector3(180.0f, 0.0f, 0.0f);
         Destroy(gameObject, 3f);
     }
-
-    //private void OnBecameInvisible()
-    //{
-    //    if (pushed)
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
 }

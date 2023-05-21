@@ -14,7 +14,6 @@ public class PowerUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")){
             Collect(other.gameObject);
-
         }
     }
 
@@ -28,9 +27,11 @@ public class PowerUp : MonoBehaviour
                 break;
             case Type.MagicMushroom:
                 player.GetComponent<Player>().Grow();
+                GameManager.Instance.AddPUScore();
                 break;
             case Type.Starpower:
                 player.GetComponent<Player>().Starpower();
+                GameManager.Instance.AddPUScore();
                 break;
         }
 

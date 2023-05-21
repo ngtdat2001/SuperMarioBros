@@ -10,6 +10,13 @@ public class GameManager : MonoBehaviour
     public int stage { get; private set; }
     public int lives { get; private set; }
     public int coins { get; private set; }
+    public int score { get; private set; }
+    public static int Lives = 0;
+    public static int Coins = 0;
+    public static int Score = 0;
+    public static int World = 0;
+    public static int Stage = 0;
+    
     private void Awake()
     {
         if(Instance != null)
@@ -42,7 +49,14 @@ public class GameManager : MonoBehaviour
     {
         lives = 3;
         coins = 0;
+        score = 0;
         LoadLevel(1, 1);
+
+        Lives = lives;
+        Coins = coins;
+        Score = score;
+        World = world;
+        Stage = stage;
     }
 
     public void LoadLevel(int world, int stage)
@@ -51,6 +65,9 @@ public class GameManager : MonoBehaviour
         this.stage = stage;
 
         SceneManager.LoadScene($"{world}-{stage}");
+
+        World = world;
+        Stage = stage;
     }
 
     //public void NextLevel()
@@ -66,6 +83,7 @@ public class GameManager : MonoBehaviour
     public void ResetLevel()
     {
         lives--;
+        Lives = lives;
 
         if(lives > 0)
         {
@@ -84,14 +102,30 @@ public class GameManager : MonoBehaviour
 
     public void AddCoin(){
         coins++;
+        score += 200;
 
         if(coins == 100){
             AddLife();
             coins = 0;
         }
+
+        Coins = coins;
+        Score = score;
     }
 
     public void AddLife(){
         lives++;
+        score += 1000;
+        Lives = lives;
+    }
+
+    public void AddPUScore(){
+        score += 1000;
+        Score = score;
+    }
+
+    public void AddEScore(){
+        score += 100;
+        Score = score;
     }
 }

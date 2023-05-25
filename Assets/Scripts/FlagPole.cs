@@ -11,6 +11,7 @@ public class FlagPole : MonoBehaviour
     public int nextStage = 2;
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")){
+            SoundManager.PlaySound("FlagPole");
             StartCoroutine(MoveTo(flag, poleBottom.position));
             StartCoroutine(LevelCompleteSequence(other.transform));
         }
@@ -32,6 +33,7 @@ public class FlagPole : MonoBehaviour
     }
 
     private IEnumerator MoveTo(Transform subject, Vector3 destination){
+        SoundManager.PlaySound("StageClear");
         while(Vector3.Distance(subject.position, destination) > 0.125f){
             subject.position = Vector3.MoveTowards(subject.position, destination, speed * Time.deltaTime);
             yield return null;

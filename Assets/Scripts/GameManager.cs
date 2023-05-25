@@ -83,7 +83,6 @@ public class GameManager : MonoBehaviour
     public void ResetLevel()
     {
         lives--;
-        Lives = lives;
 
         if(lives > 0)
         {
@@ -93,10 +92,12 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+        Lives = lives;
     }
 
     private void GameOver()
     {
+        SoundManager.PlaySound("GameOver");
         NewGame();
     }
 

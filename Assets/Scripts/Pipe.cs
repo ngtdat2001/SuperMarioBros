@@ -10,6 +10,7 @@ public class Pipe : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other) {
         if(connection != null && other.CompareTag("Player")){
             if(Input.GetKeyDown(enterKeyCode)){
+                SoundManager.PlaySound("Pipe");
                 StartCoroutine(Enter(other.transform));
             }
         }

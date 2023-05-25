@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         smallRenderer.enabled = false;
         bigRenderer.enabled = false;
         deathAnimation.enabled = true;
-
+        SoundManager.PlaySound("Dead");
         GameManager.Instance.ResetLevel(3f);
     }
 
@@ -59,6 +59,8 @@ public class Player : MonoBehaviour
 
     private void Shrink()
     {
+        SoundManager.PlaySound("Pipe");
+
         smallRenderer.enabled = true;
         bigRenderer.enabled = false;
         activeRenderer = smallRenderer;
@@ -99,6 +101,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator StarpowerAnimation(float duration){
         starpower = true;
+        SoundManager.PlaySound("Invincible");
 
         float elapsed = 0f;
         while (elapsed < duration)

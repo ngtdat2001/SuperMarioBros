@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 4171360062667764472}
   - component: {fileID: 6233037807261764033}
   - component: {fileID: 8686446063204314708}
+  - component: {fileID: 5998717303499378744}
   m_Layer: 3
   m_Name: Mario
   m_TagString: Player
@@ -291,6 +292,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smallRenderer: {fileID: 3884270047895906785}
   bigRenderer: {fileID: 8359663146278317826}
+--- !u!114 &5998717303499378744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4472740309629812889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57161f5137f6a545a3bc85f0e13ccd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: {fileID: 0}
+  score: {fileID: 0}
+  lives: {fileID: 0}
+  worldStage: {fileID: 0}
 --- !u!1 &8851619342233097567
 GameObject:
   m_ObjectHideFlags: 0

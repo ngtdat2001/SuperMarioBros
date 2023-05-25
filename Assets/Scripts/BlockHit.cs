@@ -23,6 +23,8 @@ public class BlockHit : MonoBehaviour
 
         maxHits--;
 
+        SoundManager.PlaySound("HitBrick");
+
         if (maxHits == 0) {
             spriteRenderer.sprite = emptyBlock;
         }

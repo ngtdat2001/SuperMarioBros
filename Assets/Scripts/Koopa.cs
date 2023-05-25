@@ -88,6 +88,7 @@ public class Koopa : MonoBehaviour
 
     private void Hit()
     {
+        SoundManager.PlaySound("ShellHit");
         GetComponent<AnimatedSprite>().enabled = false;
         GetComponent<DeathAnimation>().enabled = true;
         transform.eulerAngles = new Vector3(180.0f, 0.0f, 0.0f);
